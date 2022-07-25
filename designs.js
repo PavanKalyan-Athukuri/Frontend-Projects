@@ -27,7 +27,7 @@ for(let i=1;i<=h;i++){
 for(let j=1;j<=w;j++){
    let columnCell = document.createElement('td');
     columnCell.id = k;
-    rows.appendChild(cell);
+    rows.appendChild(columnCell);
     let cellId = document.getElementById(k);
     cellId.addEventListener('click',(e)=>{
         e.preventDefault();
