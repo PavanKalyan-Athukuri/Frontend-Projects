@@ -10,13 +10,15 @@ form.addEventListener('submit',(event)=>{
     event.preventDefault();
     h = document.getElementById("inputHeight").value;
     w = document.getElementById('inputWidth').value;
-    color = document.getElementById('colorPicker').value;
+    //color = document.getElementById('colorPicker').value;
     makeGrid();
 });
 function makeGrid() {
 // Your code goes here!
-//let container = document.createElement("div");
 let tab = document.getElementById("pixelCanvas");
+while(tab.hasChildNodes()){
+    tab.removeChild(tab.firstChild);
+}
 let k=h+1;
 for(let i=1;i<=h;i++){
     let row = document.createElement('tr');
@@ -31,6 +33,7 @@ for(let j=1;j<=w;j++){
     let cellId = document.getElementById(k);
     cellId.addEventListener('click',(e)=>{
         e.preventDefault();
+        color = document.getElementById('colorPicker').value;
         cellId.style.backgroundColor=color;
     });
     k++;
